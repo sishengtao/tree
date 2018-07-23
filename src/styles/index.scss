@@ -1,0 +1,210 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app{
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+div:focus{
+  outline: none;
+ }
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+// 去除公共样式
+.demo-table-expand label{width:120px!important;}
+.el-dialog--center .el-dialog__body{padding:20px;}
+.el-table{font-size:12px;}
+.el-select{width:100%;}
+.el-menu-item, .el-submenu__title{line-height:50px;height:50px;}
+// .el-checkbox+.el-checkbox{margin-left:0;}
+// .el-checkbox{margin-right:20px;}
+// .el-radio+.el-radio{margin-left:0;}
+// .el-radio{margin-right:20px;}
+//main-container全局样式
+.ft14{font-size:14px;}
+.ft16{font-size:16px;}
+.ft18{font-size:18px;}
+.gray{color:#999;}
+.red{color: #F56C6C;}
+.navbar{position:fixed;
+  width:calc(100% - 200px);
+  width:-webkit-calc(100% - 200px);
+  width:-moz-calc(100% - 200px);
+  width:-o-calc(100% - 200px);
+  left:200px;top:0;z-index:100;}
+.app-main{min-height: 100%}
+.app-container {padding:10px;font-size:12px;}// 组件字体大小
+.el-tree-node__label{font-size:12px;}// 组件字体大小
+.el-text-left{text-align:left;}
+.el-text-right{text-align:right;}
+.el-text-center{text-align:center;}
+.bg-white{background:#fff;}
+.cf{overflow: hidden;}
+.fl{float:left;}
+.fr{float:right;}
+.red{color:#F56C6C!important;}
+.margin-bottom-10{margin-bottom:10px;}
+.margin-top-10{margin-top:10px;}
+.margin-bottom-20{margin-bottom:20px;}
+.margin-top-20{margin-top:20px;}
+.ml10{margin-left: 10px;}
+.ml15{margin-left: 15px;}
+.mt5{margin-top:5px}
+// 树形结构
+.tree-left{border-right:1px solid #e6e6e6; 
+  height:calc(100% - 50px);
+  height:-webkit-calc(100% - 50px);
+  height:-moz-calc(100% - 50px);
+  height:-o-calc(100% - 50px);
+  overflow:auto;}
+.tree-right{
+  padding-left:10px;
+  height:calc(100% - 50px);height:-webkit-calc(100% - 50px);height:-moz-calc(100% - 50px);
+  position:relative;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+//成员管理-头像上传 
+.avatar-uploader001{line-height:normal;}
+.upload_box{position:relative;}
+.upload_box .upload_text{position:absolute;right:0;top:0;}
+.avatar-uploader001 .el-upload {border: 1px dashed #d9d9d9;border-radius: 6px;cursor: pointer;position: relative;overflow: hidden;}
+.avatar-uploader001 .el-upload:hover {border-color: #409EFF;}
+.avatar-uploader001 .avatar-uploader-icon {font-size:14px;color: #8c939d;width:40px;height:40px;line-height:40px;text-align: center;}
+.avatar-uploader001 .avatar {width:40px;height:40px;display: block;}
+//main样式
+.move_mech .tree-left-contain{max-height:600px;overflow:auto;}
+//消息管理的样式
+.el-padding0 .el-date-editor .el-range-separator{padding:0}
+.person_box .el-tabs__content{overflow:auto;position:absolute;top:100px;left:0;width:100%;padding:10px;
+  height:calc(100% - 50px);
+  height:-webkit-calc(100% - 50px);
+  height:-moz-calc(100% - 50px);
+  height:-o-calc(100% - 50px);
+}
+
+.maxheight .el-dialog.el-dialog--center {max-height: 600px;overflow: auto;}
+.custom-tree-node .text{margin-left:10px;}
+.menu_mech .el-card__header{line-height:36px;padding:10px;}
+.menu_mech .el-icon-circle-check{color:#409EFF;}
+.menu_mech .el-card__body{line-height:36px;padding:10px;min-height:92px;}
+.menu_mech>.el-row>.el-col-6{margin-bottom:20px;}
+.menu_mech>.el-row>.el-col-6:last-child{cursor:pointer;}
+.menu_mech>.el-row>.el-col-6:last-child .el-card__body{line-height:72px;}
+.menu_mech>.el-row>.el-col-6:last-child .el-card:hover{border:1px solid #409EFF;}
+.menu_mech>.el-row>.el-col-6:last-child .el-card:hover .el-text-center{color:#409EFF;}
+.meuntree_box{position:relative;}
+.meuntree_box .el-tabs--card>.el-tabs__header{padding-right:50px;}
+.meuntree_posi{position:absolute;right:0;top:0;z-index:9999;line-height:40px;height:40px;width:40px;text-align:center;padding:0;font-size:20px;border-bottom:0;}
+.meuntree_posi:hover{border:0;}
+.meuntree_posi:active{border:0;}
+.modular_box .el-card__body{padding:10px;cursor:pointer;}
+.modular_box .el-row .el-col{padding-bottom:10px;}
+.modular_box .el-card__body h2.title{margin:0; font-size: 16px;font-weight:400;line-height: 20px;color: #555;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.modular_box .el-card__body .text{width:calc(100% - 82px);-webkit-width:calc(100% - 82px);-moz-width:calc(100% - 82px);-o-width:calc(100% - 82px);}
+.modular_box .el-card__body .text .gray{font-size:12px;margin-top:4px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.modular_box .el-card__body .text .price{font-size: 16px;color: #ff7636;margin-top:12px;margin-bottom: 6px;}
+.modular_box .el-card__body .text .el-button{margin-top:8px;}
+.modular_box .el-card__body .text .el-button.el-button--default{color:#ff7636;font-size:14px;}
+.modular_title{height:50px;line-height:50px;margin-bottom: 10px;font-size:18px;font-weight: 400;border-bottom: 1px solid #e6e6e6;color: #555;}
+.modular_add .el-card__body{height:96px;text-align:center;}
+.modular_add .modular_add_icon{font-size:26px;padding-top:15px;}
+.modular_add .el-card{color:#888;}
+.modular_add:hover .el-card{color:#303133;}
+.function_site_title{padding:10px 24px;background:#F2F6FC;}
+.select_text{width:100px;}
+.addmodle_radio span{line-height:40px;}
+.modle_info_switch{margin-top:12px;}
+.show{display: none;padding-left:10px;}
+.el-table__row:hover .show{display: inline-block;}
+.modular_info_top{padding:10px;background:#F2F6FC;}
+.modular_info_top .text{
+  padding-left:10px;
+  width:calc(100% - 80px);
+  -webkit-width:calc(100% - 80px);
+  -moz-width:calc(100% - 80px);
+  -o-width:calc(100% - 80px);
+}
+.modular_info_top .text .title{font-size:18px;color:#555;margin-top:10px;}
+.modular_info_top .text .gray{height:26px; overflow:hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-line-clamp:2;}
+.max_switch{line-height:72px;text-align:right;}
+.max_switch .el-switch__core{height:30px;border-radius:100px;width:64px!important;}
+.max_switch .el-switch__core .el-switch__button{width:26px;height:26px;}
+.max_switch .is-checked .el-switch__core .el-switch__button{left:14px;}
+
+.logo_up_box .avatar-uploader .el-upload {border: 1px dashed #d9d9d9;border-radius: 6px;cursor: pointer;position: relative;overflow: hidden;}
+.logo_up_box .avatar-uploader .el-upload:hover {border-color: #409EFF;}
+.logo_up_box .avatar-uploader-icon {font-size: 28px;color: #8c939d;width:100px;height:50px;line-height:50px;text-align: center;}
+.logo_up_box .avatar {width:100px;height:50px;display: block;}
+.logo_up_box .text{line-height:50px;margin-left:10px;color:#666;}
+
+.zheng_up_box .avatar-uploader .el-upload {border: 1px dashed #d9d9d9;border-radius: 6px;cursor: pointer;position: relative;overflow: hidden;}
+.zheng_up_box .avatar-uploader .el-upload:hover {border-color: #409EFF;}
+.zheng_up_box .avatar-uploader-icon {font-size: 28px;color: #8c939d;width:50px;height:50px;line-height:50px;text-align: center;}
+.zheng_up_box .avatar {width:50px;height:50px;display: block;}
+.zheng_up_box .text{line-height:50px;margin-left:10px;color:#666;}
+.module_pei .title_text{font-size:16px;}
+.module_pei .title_box{line-height:20px;}
+.module_pei .title_edit{font-size:14px;color:#409EFF;margin-right:10px;cursor:pointer;}
+.module_pei .title_edit:hover{color:#007eff;}
+.module_pei .box-card{margin-bottom:10px;}
+.module_pei .box-card .el-card__body{height:240px;overflow-y:scroll;}
+.top_right_box{top:60px!important;margin-top:0!important;}
+.change_account{}

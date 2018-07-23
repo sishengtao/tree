@@ -1,0 +1,149 @@
+#app {
+  // 主体区域
+  .main-container {
+    min-height: 100%;
+    padding-top:50px;
+    transition: margin-left .28s;
+    margin-left:200px;
+  }
+  .header_box{position:fixed;top:0;width:100%;left:0;}
+  // 侧边栏
+  .sidebar-container {
+    transition: width 0.28s;
+    width:200px !important;
+    height: 100%;
+    position: fixed;
+    font-size: 0px;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    overflow: hidden;
+    //reset element-ui css
+    .horizontal-collapse-transition {
+      transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
+    }
+    .scrollbar-wrapper {
+      height: calc(100% + 15px);
+      .el-scrollbar__view {
+        height: 100%;
+      }
+    }
+    .is-horizontal {
+      display: none;
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+    }
+    .svg-icon {
+      margin-right:8px;
+    }
+    .el-menu {
+      border: none;
+      height: 100%;
+      width: 100% !important;
+    }
+  }
+  .sidebar-container .nest-menu .el-submenu>.el-submenu__title,
+  .sidebar-container .el-submenu .el-menu-item {
+    min-width:110px !important;
+    background-color: $subMenuBg !important;
+    &:hover {
+      background-color: $menuHover !important;
+    }
+  }
+  .el-menu--collapse .el-menu .el-submenu {
+    min-width:110px !important;
+  }
+
+  //适配移动端
+  .mobile {
+    .main-container {
+      margin-left: 0px;
+    }
+    .sidebar-container {
+      transition: transform .28s;
+      width: 200px !important;
+    }
+    &.hideSidebar {
+      .sidebar-container {
+        transition-duration: 0.3s;
+        transform: translate3d(-200px, 0, 0);
+      }
+    }
+  }
+  .withoutAnimation {
+    .main-container,
+    .sidebar-container {
+      transition: none;
+    }
+  }
+  .logo{width:90px;height:50px;background:url(../assets/logo.png);cursor:pointer;position:fixed;top:0;left:0;z-index:200;}
+  .logomin{width:42px;height:50px;background:url(../assets/logomin.png);cursor:pointer;position:fixed;top:0;left:0;z-index:200;display:none;}//缩小时样式，暂时隐藏的
+  .slide_left_box{background:url(../assets/sideleft_bg.png) repeat-y!important;padding-top:50px;}
+  .slide_left_box>.sidebar_right>li>ul.el-menu{position:absolute;left:90px;top:0px;width:110px!important;background:#fff!important;height:100%;z-index:9999;border-right:1px solid #eee;}
+  .slide_left_box>.sidebar_right>li>ul.el-menu>a>li{width:auto;padding:0;min-width:100%!important;}
+  .slide_left_box>.sidebar_right>li>ul.el-menu>a>li.is-active{color:#0099FC!important;}
+  .slide_left_box>.sidebar_right>li>ul.el-menu>.sidebar_right>li .el-submenu__title{background:#f5f5f5!important;}
+  .slide_left_box>.sidebar_right>li>ul.el-menu>.sidebar_right>li ul.el-menu{display:block!important;}  //中间白色导航默认展开
+  .slide_left_box>.sidebar_right>li{width:90px;padding:0!important;}
+  .slide_left_box>.sidebar_right>li.is-opened .el-submenu__title{background:#fff!important;color:#304156!important;}
+  .slide_left_box>.sidebar_right>a{width:90px;padding:0!important;}
+  .slide_left_box .el-menu-item{padding:0!important;padding-left:16px!important;}
+  .slide_left_box .router-link-active .el-menu-item{color:#0099FC!important;}
+  .slide_left_box .el-submenu__title{padding:0!important;padding-left:16px!important;background:rgb(48,65,86)!important;}
+  .slide_left_box>.sidebar_right>li>.el-submenu__title{color:#fff!important;}
+  .slide_left_box>.sidebar_right>li>.el-submenu__title i{display:none;}
+  .collapse-transition {transition:0s height ease-in-out,0s padding-top ease-in-out, 0s padding-bottom ease-in-out;}
+
+// 点击缩小时的样式begin
+  .hideSidebar {
+    .sidebar-container {
+      width:42px !important;
+    }
+    .main-container {
+      margin-left:42px;
+    }
+    .submenu-title-noDropdown {
+      padding-left: 10px !important;
+      position: relative;
+      .el-tooltip {
+        padding: 0 10px !important;
+      }
+    }
+    .el-submenu {
+      overflow: hidden;
+      &>.el-submenu__title {
+        .el-submenu__icon-arrow {
+          display: none;
+        }
+      }
+    }
+    .navbar{left:42px;
+      width:calc(100% - 42px);
+      width:-webkit-calc(100% - 42px);
+      width:-moz-calc(100% - 42px);
+      width:-o-calc(100% - 42px);}//缩小时样式展示
+    .logo{display:none;}//缩小时样式展示
+    .logomin{display:block;}//缩小时样式展示
+    .slide_left_box>.sidebar_right>li>ul.el-menu{left:42px;}//缩小时样式展示
+    .el-menu--collapse {
+      .el-submenu {
+        &>.el-submenu__title {
+          &>span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+  // 点击缩小时样式end
+
+}
+.el-menu--vertical{left:42px!important;}//缩小时样式展示
+.el-menu--vertical .el-menu--vertical{left:242px!important;}//缩小时样式展示
